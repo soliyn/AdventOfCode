@@ -1,7 +1,7 @@
 ﻿using CSharp.Day03;
 using FluentAssertions;
 
-namespace TestProject1.Day03.MultiplicatorTests;
+namespace CSharp.Tests.Day03.MultiplicatorTests;
 
 public class Part2
 {

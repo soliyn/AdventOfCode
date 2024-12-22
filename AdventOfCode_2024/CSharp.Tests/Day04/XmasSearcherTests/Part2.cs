@@ -1,9 +1,9 @@
 ﻿using CSharp.Day04;
 using FluentAssertions;
 
-namespace TestProject1.Day04.XmasSearcherTests;
+namespace CSharp.Tests.Day04.XmasSearcherTests;
 
-public class Part1
+public class Part2
 {
     [Fact]
     public void Should_Return_Expected_Result()
@@ -22,8 +22,8 @@ public class Part1
             "MXMXAXMASX",
         ];
         
-        var result = XmasSearcher.Part1(lines);
+        var result = XmasSearcher.Part2(lines);
 
-        result.Should().Be(18);
+        result.Should().Be(9);
     }
 }

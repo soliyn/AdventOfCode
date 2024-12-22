@@ -1,7 +1,7 @@
 ﻿using CSharp.Day01.Part1;
 using FluentAssertions;
 
-namespace TestProject1.Day01.Part1.TotalDistanceTests;
+namespace CSharp.Tests.Day01.Part1.TotalDistanceTests;
 
 public class GetTotalDistance
 {

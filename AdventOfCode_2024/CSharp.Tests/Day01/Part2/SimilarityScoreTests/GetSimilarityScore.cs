@@ -1,7 +1,7 @@
 ﻿using CSharp.Day01.Part2;
 using FluentAssertions;
 
-namespace TestProject1.Day01.Part2.SimilarityScoreTests;
+namespace CSharp.Tests.Day01.Part2.SimilarityScoreTests;
 
 public class GetSimilarityScore
 {

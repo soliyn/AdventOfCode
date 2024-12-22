@@ -1,7 +1,7 @@
-﻿using CSharp.Day02.Part1;
+﻿using CSharp.Day02.Part2;
 using FluentAssertions;
 
-namespace TestProject1.Day02.Part1.RedNosedReportsTests;
+namespace CSharp.Tests.Day02.Part2.RedNosedReportsWithToleratingTests;
 
 public static class GetNumberOfSafeReports
 {
@@ -18,8 +18,9 @@ public static class GetNumberOfSafeReports
             [1, 3, 6, 7, 9],
         };
         
-        int result = RedNosedReports.GetNumberOfSafeReports(reports);
+        int result = RedNosedReportsWithTolerating.GetNumberOfSafeReports(reports);
         
-        result.Should().Be(2);
+        result.Should().Be(4);
     }
+
 }

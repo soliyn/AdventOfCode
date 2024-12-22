@@ -5,6 +5,7 @@ using CSharp.Day02.Part1;
 using CSharp.Day02.Part2;
 using CSharp.Day03;
 using CSharp.Day04;
+using CSharp.Day05;
 
 // Day01
 // var (left, right) = Utilities.GetLeftAndRightLists("Day01/input_day_01_1.txt");
@@ -25,7 +26,12 @@ using CSharp.Day04;
 // Console.WriteLine(Multiplicator.Part2(mulProgram));
 
 // Day04
-var lines = System.IO.File.ReadAllLines(@"Day04/input_day_04.txt");
+// var lines = System.IO.File.ReadAllLines(@"Day04/input_day_04.txt");
 
 // Console.WriteLine(XmasSearcher.Part1(lines)); // 2618
-Console.WriteLine(XmasSearcher.Part2(lines)); // 2011
+// Console.WriteLine(XmasSearcher.Part2(lines)); // 2011
+
+// Day05
+var (rules, updates) = Utilities.GetRulesAndUpdates("Day05/input_day_05.txt");
+
+Console.WriteLine(PrintQueue.Part1(rules, updates)); // 5762
