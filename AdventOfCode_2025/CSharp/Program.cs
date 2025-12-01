@@ -1,3 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// Day01
 
-Console.WriteLine("Hello, World!");
+using CSharp.Day01;
+
+var input = File.ReadAllLines("Day01/input.txt");
+Console.WriteLine(SafeDial.GetZeroTimes(input));
