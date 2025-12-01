@@ -11,6 +11,16 @@ public static class SafeDial
             .Count(i => i == 0)
             ;
     }
+    
+    public static int GetZeroClickTimes(IEnumerable<string> input)
+    {
+        DialWithZeroClicks dial = new();
+
+        return ParseInput(input)
+            .Select(i => dial.Rotate(i))
+            .Sum()
+            ;
+    }
 
     private static IEnumerable<int> ParseInput(IEnumerable<string> input)
     {
