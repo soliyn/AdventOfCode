@@ -16,3 +16,4 @@ var input = File.ReadAllText("Day02/input.txt")
     })
     ;
 Console.WriteLine(ProductIdsAnalyzer.GetInvalidIdsSum(input));
+Console.WriteLine(ProductIdsAnalyzer.GetInvalidIdsSum2(input));

@@ -46,5 +46,57 @@ public static class ProductIdsAnalyzer
 
         throw new ArgumentException("Number has an odd number of digits or exceeds 18 digits.");
     }
+    
+    public static long GetInvalidIdsSum2(IEnumerable<ProductIdRange> idRanges)
+    {
+        long sum = 0;
+        foreach (var idRange in idRanges)
+        {
+            for (long id = idRange.Start; id <= idRange.End; id++)
+            {
+                if (IsInvalidId2(id))
+                {
+                    sum += id;
+                }
+            }
+        }
+        return sum;
+    }
+    
+    public static bool IsInvalidId2(long number)
+    {
+        string numStr = Math.Abs(number).ToString();
+        int length = numStr.Length;
+    
+        // Try all possible pattern lengths from 1 to half the total length
+        for (int patternLen = 1; patternLen <= length / 2; patternLen++)
+        {
+            // Only check if the total length is divisible by pattern length
+            if (length % patternLen == 0)
+            {
+                string pattern = numStr.Substring(0, patternLen);
+                bool isRepeating = true;
+            
+                // Check if this pattern repeats throughout the entire number
+                for (int i = patternLen; i < length; i += patternLen)
+                {
+                    string segment = numStr.Substring(i, patternLen);
+                    if (segment != pattern)
+                    {
+                        isRepeating = false;
+                        break;
+                    }
+                }
+            
+                // If we found a repeating pattern (and it repeats at least twice)
+                if (isRepeating && length / patternLen >= 2)
+                {
+                    return true;
+                }
+            }
+        }
+    
+        return false;
+    }
 
 }
