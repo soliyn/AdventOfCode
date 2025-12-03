@@ -21,16 +21,16 @@ using CSharp.Day03;
 
 // Day03
 var input = File.ReadAllLines("Day03/input.txt");
-var debug = input
-    .Select(line => Battery.GetMaxJoltage(line.ToCharArray()));
-foreach (var joltage in debug)
-{
-    Console.WriteLine(joltage);
-}
-
 var result = input
         .Select(line => Battery.GetMaxJoltage(line.ToCharArray()))
         .Select(int.Parse)
         .Sum()
     ;
 Console.WriteLine(result);
+
+var result2 = input
+        .Select(line => Battery.GetMaxJoltage2(line.ToCharArray()))
+        .Select(long.Parse)
+        .Sum()
+    ;
+Console.WriteLine(result2);
