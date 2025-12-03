@@ -4,45 +4,16 @@ namespace CSharp.Day03;
 
 public static class Battery
 {
-    public static string GetMaxJoltage(char[] jValues)
+    public static string GetMaxJoltage(char[] jValues, int numberOfBanks)
     {
-        Debug.Assert(jValues.Length > 1);
-        
-        char firstMax = jValues[0];
-        char secondMax = jValues[1];
+        Debug.Assert(jValues.Length >= numberOfBanks);
 
-        for (int i = 1; i < (jValues.Length - 1); i++)
-        {
-            if (jValues[i] > firstMax)
-            {
-                firstMax = jValues[i];
-                secondMax = jValues[i + 1];
-                continue;
-            }
-
-            if (jValues[i] > secondMax)
-            {
-                secondMax = jValues[i];
-            }
-        }
-
-        if (jValues[^1] > secondMax)
-        {
-            secondMax = jValues[^1];
-        }
-        return $"{firstMax}{secondMax}";
-    }    
-    
-    public static string GetMaxJoltage2(char[] jValues)
-    {
-        Debug.Assert(jValues.Length >= 12);
-
-        char[] maxDigits = new char[12];
+        char[] maxDigits = new char[numberOfBanks];
         int maxPos = -1;
         
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < numberOfBanks; i++)
         {
-            (var max, maxPos) = GetMaxDigit(jValues, maxPos + 1, jValues.Length - 12 + i);
+            (var max, maxPos) = GetMaxDigit(jValues, maxPos + 1, jValues.Length - numberOfBanks + i);
             maxDigits[i] = max;
         }
 

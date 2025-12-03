@@ -22,14 +22,14 @@ using CSharp.Day03;
 // Day03
 var input = File.ReadAllLines("Day03/input.txt");
 var result = input
-        .Select(line => Battery.GetMaxJoltage(line.ToCharArray()))
+        .Select(line => Battery.GetMaxJoltage(line.ToCharArray(), 2))
         .Select(int.Parse)
         .Sum()
     ;
 Console.WriteLine(result);
 
 var result2 = input
-        .Select(line => Battery.GetMaxJoltage2(line.ToCharArray()))
+        .Select(line => Battery.GetMaxJoltage(line.ToCharArray(), 12))
         .Select(long.Parse)
         .Sum()
     ;
