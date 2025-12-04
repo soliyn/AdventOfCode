@@ -1,6 +1,7 @@
 ﻿using CSharp.Day01;
 using CSharp.Day02;
 using CSharp.Day03;
+using CSharp.Day04;
 
 // Day01
 // var input = File.ReadAllLines("Day01/input.txt");
@@ -20,17 +21,24 @@ using CSharp.Day03;
 // Console.WriteLine(ProductIdsAnalyzer.GetInvalidIdsSum2(input));
 
 // Day03
-var input = File.ReadAllLines("Day03/input.txt");
-var result = input
-        .Select(line => Battery.GetMaxJoltage(line.ToCharArray(), 2))
-        .Select(int.Parse)
-        .Sum()
-    ;
-Console.WriteLine(result);
+// var input = File.ReadAllLines("Day03/input.txt");
+// var result = input
+//         .Select(line => Battery.GetMaxJoltage(line.ToCharArray(), 2))
+//         .Select(int.Parse)
+//         .Sum()
+//     ;
+// Console.WriteLine(result);
+//
+// var result2 = input
+//         .Select(line => Battery.GetMaxJoltage(line.ToCharArray(), 12))
+//         .Select(long.Parse)
+//         .Sum()
+//     ;
+// Console.WriteLine(result2);
 
-var result2 = input
-        .Select(line => Battery.GetMaxJoltage(line.ToCharArray(), 12))
-        .Select(long.Parse)
-        .Sum()
+// Day04
+var input = File.ReadAllLines("Day04/input.txt")
+        .Select(line => line.ToCharArray())
+        .ToArray();
     ;
-Console.WriteLine(result2);
+Console.WriteLine(GridOfPaper.GetNumberOfAccessedRolls(input));    
