@@ -22,6 +22,42 @@ public static class GridOfPaper
         
         return count;
     }
+    public static int GetNumberOfRemovableRolls(char[][] grid)
+    {
+        int totalCount = 0;
+
+        while (true)
+        {
+            int count = 0;
+            var rollsToRemove = new List<(int, int)>();
+            for (int row = 0; row < grid.Length; row++)
+            {
+                for (int col = 0; col < grid[0].Length; col++)
+                {
+                    if (grid[row][col] == '@')
+                    {
+                        if (GetNumberOfRollsInAdjacentPositions(grid, row, col) < 4)
+                        {
+                            count++;
+                            rollsToRemove.Add((row, col));
+                        }
+                    }
+                }
+            }
+            if (count == 0)
+            {
+                break;
+            }
+            totalCount += count;
+            foreach (var r in rollsToRemove)
+            {
+                grid[r.Item1][r.Item2] = 'x';
+            }
+        }
+        
+        return totalCount;
+    }
+    
 
     private static int GetNumberOfRollsInAdjacentPositions(char[][] grid, int row, int col)
     {

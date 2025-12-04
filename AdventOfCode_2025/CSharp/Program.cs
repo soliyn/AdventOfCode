@@ -42,3 +42,4 @@ var input = File.ReadAllLines("Day04/input.txt")
         .ToArray();
     ;
 Console.WriteLine(GridOfPaper.GetNumberOfAccessedRolls(input));    
+Console.WriteLine(GridOfPaper.GetNumberOfRemovableRolls(input));    
