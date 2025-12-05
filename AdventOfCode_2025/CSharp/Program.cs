@@ -2,6 +2,7 @@
 using CSharp.Day02;
 using CSharp.Day03;
 using CSharp.Day04;
+using CSharp.Day05;
 
 // Day01
 // var input = File.ReadAllLines("Day01/input.txt");
@@ -37,9 +38,28 @@ using CSharp.Day04;
 // Console.WriteLine(result2);
 
 // Day04
-var input = File.ReadAllLines("Day04/input.txt")
-        .Select(line => line.ToCharArray())
-        .ToArray();
-    ;
-Console.WriteLine(GridOfPaper.GetNumberOfAccessedRolls(input));    
-Console.WriteLine(GridOfPaper.GetNumberOfRemovableRolls(input));    
+// var input = File.ReadAllLines("Day04/input.txt")
+//         .Select(line => line.ToCharArray())
+//         .ToArray();
+//     ;
+// Console.WriteLine(GridOfPaper.GetNumberOfAccessedRolls(input));    
+// Console.WriteLine(GridOfPaper.GetNumberOfRemovableRolls(input));    
+
+// Day05
+var input = File.ReadAllLines("Day05/input.txt");
+List<(long, long)> ranges = [];
+List<long> ingredients = [];
+int i = 0;
+while (!string.IsNullOrEmpty(input[i]))
+{
+    string[] rangeStrings = input[i].Split('-');
+    ranges.Add((long.Parse(rangeStrings[0]), long.Parse(rangeStrings[1])));
+    i++;
+}
+i++;
+while (i < input.Length)
+{
+    ingredients.Add(long.Parse(input[i]));
+    i++;
+}
+Console.WriteLine(IngredientManager.GetNumberOfFreshIngredients(ranges, ingredients));

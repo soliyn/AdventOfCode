@@ -22,4 +22,8 @@
       <ProjectReference Include="..\CSharp\CSharp.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Day05\" />
+    </ItemGroup>
+
 </Project>
