@@ -56,10 +56,11 @@ while (!string.IsNullOrEmpty(input[i]))
     ranges.Add((long.Parse(rangeStrings[0]), long.Parse(rangeStrings[1])));
     i++;
 }
-i++;
-while (i < input.Length)
-{
-    ingredients.Add(long.Parse(input[i]));
-    i++;
-}
-Console.WriteLine(IngredientManager.GetNumberOfFreshIngredients(ranges, ingredients));
+// i++;
+// while (i < input.Length)
+// {
+//     ingredients.Add(long.Parse(input[i]));
+//     i++;
+// }
+// Console.WriteLine(IngredientManager.GetNumberOfFreshIngredients(ranges, ingredients));
+Console.WriteLine(IngredientManager.GetNumberOfFreshIngredientIds(ranges));
