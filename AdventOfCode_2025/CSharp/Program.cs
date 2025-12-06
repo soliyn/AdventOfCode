@@ -3,6 +3,7 @@ using CSharp.Day02;
 using CSharp.Day03;
 using CSharp.Day04;
 using CSharp.Day05;
+using CSharp.Day06;
 
 // Day01
 // var input = File.ReadAllLines("Day01/input.txt");
@@ -46,21 +47,25 @@ using CSharp.Day05;
 // Console.WriteLine(GridOfPaper.GetNumberOfRemovableRolls(input));    
 
 // Day05
-var input = File.ReadAllLines("Day05/input.txt");
-List<(long, long)> ranges = [];
-List<long> ingredients = [];
-int i = 0;
-while (!string.IsNullOrEmpty(input[i]))
-{
-    string[] rangeStrings = input[i].Split('-');
-    ranges.Add((long.Parse(rangeStrings[0]), long.Parse(rangeStrings[1])));
-    i++;
-}
-// i++;
-// while (i < input.Length)
+// var input = File.ReadAllLines("Day05/input.txt");
+// List<(long, long)> ranges = [];
+// List<long> ingredients = [];
+// int i = 0;
+// while (!string.IsNullOrEmpty(input[i]))
 // {
-//     ingredients.Add(long.Parse(input[i]));
+//     string[] rangeStrings = input[i].Split('-');
+//     ranges.Add((long.Parse(rangeStrings[0]), long.Parse(rangeStrings[1])));
 //     i++;
 // }
-// Console.WriteLine(IngredientManager.GetNumberOfFreshIngredients(ranges, ingredients));
-Console.WriteLine(IngredientManager.GetNumberOfFreshIngredientIds(ranges));
+// // i++;
+// // while (i < input.Length)
+// // {
+// //     ingredients.Add(long.Parse(input[i]));
+// //     i++;
+// // }
+// // Console.WriteLine(IngredientManager.GetNumberOfFreshIngredients(ranges, ingredients));
+// Console.WriteLine(IngredientManager.GetNumberOfFreshIngredientIds(ranges));
+
+// Day06
+var input = File.ReadAllLines("Day06/input.txt");
+Console.WriteLine(CephalopodWorksheet.GetSum(input));
