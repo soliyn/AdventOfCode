@@ -69,3 +69,4 @@ using CSharp.Day06;
 // Day06
 var input = File.ReadAllLines("Day06/input.txt");
 Console.WriteLine(CephalopodWorksheet.GetSum(input));
+Console.WriteLine(CephalopodWorksheet.GetSum2(input));
