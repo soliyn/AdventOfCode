@@ -4,6 +4,7 @@ using CSharp.Day03;
 using CSharp.Day04;
 using CSharp.Day05;
 using CSharp.Day06;
+using CSharp.Day07;
 
 // Day01
 // var input = File.ReadAllLines("Day01/input.txt");
@@ -67,6 +68,10 @@ using CSharp.Day06;
 // Console.WriteLine(IngredientManager.GetNumberOfFreshIngredientIds(ranges));
 
 // Day06
-var input = File.ReadAllLines("Day06/input.txt");
-Console.WriteLine(CephalopodWorksheet.GetSum(input));
-Console.WriteLine(CephalopodWorksheet.GetSum2(input));
+// var input = File.ReadAllLines("Day06/input.txt");
+// Console.WriteLine(CephalopodWorksheet.GetSum(input));
+// Console.WriteLine(CephalopodWorksheet.GetSum2(input));
+
+// Day07
+var input = File.ReadAllLines("Day07/input.txt");
+Console.WriteLine(Tachyon.GetNumberOfSplits(input));
