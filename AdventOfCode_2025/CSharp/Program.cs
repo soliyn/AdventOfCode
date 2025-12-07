@@ -75,3 +75,4 @@ using CSharp.Day07;
 // Day07
 var input = File.ReadAllLines("Day07/input.txt");
 Console.WriteLine(Tachyon.GetNumberOfSplits(input));
+Console.WriteLine(Tachyon.GetNumberOfTimelines(input));
