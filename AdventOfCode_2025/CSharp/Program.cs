@@ -5,6 +5,7 @@ using CSharp.Day04;
 using CSharp.Day05;
 using CSharp.Day06;
 using CSharp.Day07;
+using CSharp.Day08;
 
 // Day01
 // var input = File.ReadAllLines("Day01/input.txt");
@@ -73,6 +74,21 @@ using CSharp.Day07;
 // Console.WriteLine(CephalopodWorksheet.GetSum2(input));
 
 // Day07
-var input = File.ReadAllLines("Day07/input.txt");
-Console.WriteLine(Tachyon.GetNumberOfSplits(input));
-Console.WriteLine(Tachyon.GetNumberOfTimelines(input));
+// var input = File.ReadAllLines("Day07/input.txt");
+// Console.WriteLine(Tachyon.GetNumberOfSplits(input));
+// Console.WriteLine(Tachyon.GetNumberOfTimelines(input));
+
+// Day08
+var input = File.ReadAllLines("Day08/input.txt")
+        .Select(x => x.Split(","))
+        .Select(pointCoordinates => new Point3D(int.Parse(pointCoordinates[0]), int.Parse(pointCoordinates[1]), int.Parse(pointCoordinates[2])))
+        .ToList()
+    ;
+var boxes = JunctionBoxCreator.BuildJunctionBoxes(input, 1000);
+var result = boxes
+        .Select(x => (long)x.Count)
+        .OrderDescending()
+        .Take(3)
+        .Aggregate((a, b) => a * b)
+    ;
+Console.WriteLine(result);
