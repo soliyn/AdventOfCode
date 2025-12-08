@@ -84,11 +84,13 @@ var input = File.ReadAllLines("Day08/input.txt")
         .Select(pointCoordinates => new Point3D(int.Parse(pointCoordinates[0]), int.Parse(pointCoordinates[1]), int.Parse(pointCoordinates[2])))
         .ToList()
     ;
-var boxes = JunctionBoxCreator.BuildJunctionBoxes(input, 1000);
-var result = boxes
-        .Select(x => (long)x.Count)
-        .OrderDescending()
-        .Take(3)
-        .Aggregate((a, b) => a * b)
-    ;
-Console.WriteLine(result);
+// var boxes = JunctionBoxCreator.BuildJunctionBoxes(input, 1000);
+// var result = boxes
+//         .Select(x => (long)x.Count)
+//         .OrderDescending()
+//         .Take(3)
+//         .Aggregate((a, b) => a * b)
+//     ;
+// Console.WriteLine(result);
+var lastPair = JunctionBoxCreator.BuildJunctionBoxesUntilSingleGroup(input);
+Console.WriteLine(lastPair.A.X * lastPair.B.X);
