@@ -6,6 +6,7 @@ using CSharp.Day05;
 using CSharp.Day06;
 using CSharp.Day07;
 using CSharp.Day08;
+using CSharp.Day09;
 
 // Day01
 // var input = File.ReadAllLines("Day01/input.txt");
@@ -79,11 +80,11 @@ using CSharp.Day08;
 // Console.WriteLine(Tachyon.GetNumberOfTimelines(input));
 
 // Day08
-var input = File.ReadAllLines("Day08/input.txt")
-        .Select(x => x.Split(","))
-        .Select(pointCoordinates => new Point3D(int.Parse(pointCoordinates[0]), int.Parse(pointCoordinates[1]), int.Parse(pointCoordinates[2])))
-        .ToList()
-    ;
+// var input = File.ReadAllLines("Day08/input.txt")
+//         .Select(x => x.Split(","))
+//         .Select(pointCoordinates => new Point3D(int.Parse(pointCoordinates[0]), int.Parse(pointCoordinates[1]), int.Parse(pointCoordinates[2])))
+//         .ToList()
+//     ;
 // var boxes = JunctionBoxCreator.BuildJunctionBoxes(input, 1000);
 // var result = boxes
 //         .Select(x => (long)x.Count)
@@ -92,5 +93,12 @@ var input = File.ReadAllLines("Day08/input.txt")
 //         .Aggregate((a, b) => a * b)
 //     ;
 // Console.WriteLine(result);
-var lastPair = JunctionBoxCreator.BuildJunctionBoxesUntilSingleGroup(input);
-Console.WriteLine(lastPair.A.X * lastPair.B.X);
+// var lastPair = JunctionBoxCreator.BuildJunctionBoxesUntilSingleGroup(input);
+// Console.WriteLine(lastPair.A.X * lastPair.B.X);
+
+// Day09
+var input = File.ReadAllLines("Day09/input.txt")
+    .Select(x => x.Split(","))
+    .Select(coord => new Point(int.Parse(coord[0]), int.Parse(coord[1])))
+    .ToList();
+Console.WriteLine(RectangleFinder.FindLargestRectangleArea(input));    
