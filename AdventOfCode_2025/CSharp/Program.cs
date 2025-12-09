@@ -102,3 +102,4 @@ var input = File.ReadAllLines("Day09/input.txt")
     .Select(coord => new Point(int.Parse(coord[0]), int.Parse(coord[1])))
     .ToList();
 Console.WriteLine(RectangleFinder.FindLargestRectangleArea(input));    
+Console.WriteLine(RectangleFinder.FindLargestRectangleAreaInsidePolygon(input));    
